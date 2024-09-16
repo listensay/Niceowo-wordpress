@@ -23,7 +23,7 @@ if ( ! class_exists( 'CSF_Options' ) ) {
     public $args         = array(
 
       // framework title
-      'framework_title'         => 'Nicewow <small style="margin-left: 2px; color: red">1.0</small>',
+      'framework_title'         => 'Niceowo <small style="margin-left: 2px; color: red">1.0</small>',
       'framework_class'         => '',
 
       // menu settings
@@ -59,7 +59,7 @@ if ( ! class_exists( 'CSF_Options' ) ) {
       'admin_bar_menu_priority' => 50,
 
       // footer
-      'footer_text'             => 'Nicewow 1.0',
+      'footer_text'             => 'Niceowo 1.0',
       'footer_after'            => '',
       'footer_credit'           => '',
 
