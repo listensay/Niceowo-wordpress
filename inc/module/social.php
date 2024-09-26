@@ -44,17 +44,17 @@
         'title'    => '社交链接',
         'fields'    => array(
           array(
-            'id'    => 'text',
+            'id'    => 'name',
             'type'  => 'text',
             'title' => '链接名称',
           ),
           array(
-            'id'    => 'text',
+            'id'    => 'icon',
             'type'  => 'upload',
             'title' => '链接图标',
           ),
           array(
-            'id'    => 'text',
+            'id'    => 'url',
             'type'  => 'text',
             'title' => '链接地址',
           ),

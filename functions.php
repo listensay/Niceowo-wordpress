@@ -18,32 +18,28 @@ add_action( 'graphql_register_types', function() {
     'type' => 'website', // 自定义类型
     'description' => 'Codestar Framework settings',
     'resolve' => function() {
-      // 获取 Codestar Framework 的设置
-      $theme_options = get_option('Niceowo'); // 修改 'csf_theme_options' 为实际使用的选项名称
-
-      return [
-        // 站点描述
-        'description' => $theme_options['site_description'],
-        // 站点LOGO
-        'logo' => $theme_options['site_logo'],
-        // 站点标语
-        'slogan' => $theme_options['site_slogan'],
-        // 建站日期
-        'date' => $theme_options['site_build_date'],
-        // 版权信息
-        'copy' => $theme_options['site_copyright'],
-        // 社交信息 头像
-        'avatar' => $theme_options['avatar'],
-        // 社交信息 网名昵称
-        'nickname' => $theme_options['nickname'],
-        // 社交信息 邮箱
-        'email' => $theme_options['email'],
-        // 社交信息 关于自己
-        'about' => $theme_options['about'],
-        // 社交信息 社交链接
-        'social_links' => $theme_options['social_links'],
-      ];
+      $theme_options = get_option('Niceowo');
+      return $theme_options; 
     }
+  ]);
+
+  // 注册 SocialLink 对象类型
+  register_graphql_object_type( 'SocialLink', [
+    'description' => '社交链接详情',
+    'fields' => [
+        'name' => [
+            'type' => 'String',
+            'description' => '社交网络的名称',
+        ],
+        'icon' => [
+            'type' => 'String',
+            'description' => '社交网络的图标',
+        ],
+        'url' => [
+            'type' => 'String',
+            'description' => '社交网络的链接地址',
+        ],
+    ]
   ]);
 
   // 注册 CodestarSettings 对象类型
@@ -86,10 +82,15 @@ add_action( 'graphql_register_types', function() {
         'description' => '社交信息 关于自己',
       ],
       'social_links' => [
-        'type' => [
-          'list_of' => 'SocialLink'
-        ],
-        'description' => '社交信息 社交链接',
+        'type' => ['list_of' => 'SocialLink'],
+        'description' => '社交网络链接列表',
+        'resolve' => function($root) {
+          if (is_null($root['social_links'])) {
+            return [];
+          } else {
+            return $root['social_links'];
+          }
+        }
       ]
     ]
   ]);
