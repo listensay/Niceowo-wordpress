@@ -57,11 +57,11 @@ add_action( 'graphql_register_types', function() {
         'type' => 'String',
         'description' => '站点标语',
       ],
-      'date' => [
+      'build_date' => [
         'type' => 'String',
         'description' => '建站日期',
       ],
-      'copy' => [
+      'copyright' => [
         'type' => 'String',
         'description' => '版权信息 支持HTML',
       ],
@@ -85,6 +85,9 @@ add_action( 'graphql_register_types', function() {
         'type' => ['list_of' => 'SocialLink'],
         'description' => '社交网络链接列表',
         'resolve' => function($root) {
+          if (empty($root['social_links'])) {
+            return [];
+          }
           if (is_null($root['social_links'])) {
             return [];
           } else {

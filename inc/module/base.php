@@ -5,7 +5,7 @@
     'fields' => array(
       // 网站LOGO
       array(
-        'id'        => 'site_logo',
+        'id'        => 'logo',
         'type'      => 'upload',
         'library'      => 'image',
         'button_title' => '上传LOGO',
@@ -15,7 +15,7 @@
       ),
       // 站点描述
       array(
-        'id'       => 'site_description',
+        'id'       => 'description',
         'type'     => 'textarea',
         'title'    => '网站描述',
         'desc'     => '网站描述',
@@ -23,7 +23,7 @@
       ),
       // 站点标语
       array(
-        'id'       => 'site_slogan',
+        'id'       => 'slogan',
         'type'     => 'text',
         'title'    => '网站标语',
         'desc'     => '网站标语',
@@ -31,7 +31,7 @@
       ),
       // 建站日期
       array(
-        'id'       => 'site_build_date',
+        'id'       => 'build_date',
         'type'     => 'date',
         'title'    => '建站日期',
         'desc'     => '建站日期',
@@ -39,7 +39,7 @@
       ),
       // 版权信息
       array(
-        'id'       => 'site_copyright',
+        'id'       => 'copyright',
         'type'     => 'wp_editor',
         'title'    => '版权信息',
         'desc'     => '版权信息',
