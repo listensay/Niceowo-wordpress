@@ -14,8 +14,8 @@ add_action( 'after_setup_theme', 'register_custom_menu' );
 
 add_action( 'graphql_register_types', function() {
   // 注册自定义字段，将 Codestar Framework 的设置暴露出来
-  register_graphql_field( 'RootQuery', 'codestarSettings', [
-    'type' => 'CodestarSettings', // 自定义类型
+  register_graphql_field( 'RootQuery', 'website', [
+    'type' => 'website', // 自定义类型
     'description' => 'Codestar Framework settings',
     'resolve' => function() {
       // 获取 Codestar Framework 的设置
@@ -47,7 +47,7 @@ add_action( 'graphql_register_types', function() {
   ]);
 
   // 注册 CodestarSettings 对象类型
-  register_graphql_object_type( 'CodestarSettings', [
+  register_graphql_object_type( 'website', [
     'fields' => [
       'description' => [
         'type' => 'String',
