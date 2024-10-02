@@ -13,10 +13,9 @@ if( class_exists( 'CSF' ) ) {
     'menu_slug'  => 'Niceowo',
   ) );
   // 基础设置
-  require get_theme_file_path(). '/inc/module/base.php';
+  require get_theme_file_path(). '/inc/module/basic.php';
   // 社交
   require get_theme_file_path(). '/inc/module/social.php';
   // 备份
   require get_theme_file_path(). '/inc/module/backup.php';
-
 }
