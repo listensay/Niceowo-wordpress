@@ -21,6 +21,16 @@
         'desc'     => '网站描述',
         'default'    => '未设置站点描述',
       ),
+      // 网站背景
+      array(
+        'id'       => 'background',
+        'type'     => 'background',
+        'title'    => '网站背景',
+        'desc'     => '网站背景',
+        'default'    => array(
+          'background-color' => 'rgb(191 219 254/1)',
+        ),
+      ),
       // 站点标语
       array(
         'id'       => 'slogan',

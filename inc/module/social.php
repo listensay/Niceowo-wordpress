@@ -59,7 +59,40 @@
             'title' => '链接地址',
           ),
         )
-      )
+      ),
+      // 个人资料
+      array(
+        'id'       => 'profile',
+        'type'     => 'group',
+        'title'    => '个人资料',
+        'fields'    => array(
+          array(
+            'id'    => 'key',
+            'type'  => 'text',
+            'title' => '主题'
+          ),
+          array(
+            'id'    => 'value',
+            'type'  => 'wp_editor',
+            'title' => '内容'
+          ),
+          array(
+            'id'    => 'color',
+            'type'  => 'color',
+            'title' => '颜色'
+          ),
+        )
+      ),
+      // 社交背景图
+      array(
+        'id'       => 'social_background',
+        'type'     => 'background',
+        'title'    => '社交背景图',
+        'desc'     => '社交背景图',
+        'default'    => array(
+          'background-color' => '#423DAF',
+        ),
+      ),
     )
   )
 );
